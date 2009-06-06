@@ -77,7 +77,7 @@
     </java>
   </target>
 
-  <target name="jar">
+  <target name="jar" depends="test">
     <jar jarfile="${jar.name}" basedir="${classes.dir}">
       <fileset dir="${src.dir}">
         <include name="**/*.clj" />
