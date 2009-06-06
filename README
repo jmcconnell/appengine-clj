@@ -5,6 +5,7 @@ http://github.com/duelinmarkers/appengine-clj/tree/master
 So far, the only part of that library that has been incorporated is the
 datastore part. However, com.ubermensch.appengine-clj.datastore has been
 enhanced to allow the storage and retrieval of collections of child Entities.
+
 It supports this by looking for collections (sets, lists or vectors) of
 maps with a ::key field and storing the Key and the type of collection (set,
 list or vector) in a java.util.Collection, which AppEngine supports. When
