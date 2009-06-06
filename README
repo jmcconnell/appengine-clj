@@ -1,0 +1,9 @@
+This library is based off of the work of duelinmarkers, located at:
+
+http://github.com/duelinmarkers/appengine-clj/tree/master
+
+So far, the interfaces to the AppEngine User library is left out, as are the
+test utilities. However, the datastore support, in
+com.ubermensch.appengine-clj.datastore has received worthwhile new features,
+including the ability to store Clojure datastructures, like sets, vectors and
+lists.
