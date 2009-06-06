@@ -2,8 +2,13 @@ This library is based off of the work of duelinmarkers, located at:
 
 http://github.com/duelinmarkers/appengine-clj/tree/master
 
-So far, the interfaces to the AppEngine User library are left out, as are the
-test utilities. However, the datastore support, in
-com.ubermensch.appengine-clj.datastore has received worthwhile new features,
-including the ability to store Clojure datastructures, like sets, vectors and
-lists.
+So far, the only part of that library that has been incorporated is the
+datastore part. However, com.ubermensch.appengine-clj.datastore has been
+enhanced to allow the storage and retrieval of collections of child Entities.
+It supports this by looking for collections (sets, lists or vectors) of
+maps with a ::key field and storing the Key and the type of collection (set,
+list or vector) in a java.util.Collection, which AppEngine supports. When
+an Entity with such a collection is retrieved, the library recognizes the Key's
+and fetches the lot of them in a single batch. Currently, the maximum size
+for the stored collection is 1000 Entities because AppEngine only allows you
+to fetch 1000 results in a single get.
