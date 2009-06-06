@@ -1,8 +1,10 @@
-<project>
+<project name="appengine-clj" default="jar">
+  <property name="src.dir" location="src/main" />
   <property name="classes.dir" location="classes" />
+  <property name="jar.name" value="appengine-clj.jar" />
 
   <path id="project.classpath">
-    <pathelement location="src/main" />
+    <pathelement location="${src.dir}" />
     <pathelement location="${classes.dir}" />
     <fileset dir="lib">
       <include name="**/*.jar" />
@@ -73,5 +75,13 @@
       </classpath>
       <arg value="127.0.0.1" />
     </java>
+  </target>
+
+  <target name="jar">
+    <jar jarfile="${jar.name}" basedir="${classes.dir}">
+      <fileset dir="${src.dir}">
+        <include name="**/*.clj" />
+      </fileset>
+    </jar>
   </target>
 </project>
